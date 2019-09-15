@@ -1,0 +1,45 @@
+/* label color */
+
+.input-field label {
+    /* color: #cfd8dc !important;  */
+    color: #00c853 !important;
+}
+
+/* label focus color */
+
+.input-field input[type=text]:focus+label, .materialize-textarea:focus:not([readonly]){
+    color: #000 ;
+    border-bottom: 1px solid #00c853 !important;
+    box-shadow: 0 1px 0 0 #00c853 !important;
+}
+
+/* label underline focus color */
+
+.input-field input[type=text]:focus, .materialize-textarea:focus:not([readonly]){
+    border-bottom: 1px solid #00c853 !important;
+    box-shadow: 0 1px 0 0 #00c853 !important;
+}
+
+/* valid color */
+
+.input-field input[type=text].valid{
+    border-bottom: 1px solid #000 !important;
+    box-shadow: 0 1px 0 0 #000 !important;
+}
+
+/* invalid color */
+
+.input-field input[type=text].invalid {
+    border-bottom: 1px solid red !important;
+    box-shadow: 0 1px 0 0 red !important;
+}
+
+/* icon prefix focus color */
+
+.input-field .prefix.active {
+    color: #00c853 !important;
+}
+
+.error_msg{
+    color: #f44336;
+}

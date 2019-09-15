@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="container">
+    <h3 class="center-align">Authorization - Implicit Grant Flow</h3>
+</div>  
+<br>
+<div class="container">
+<form action="" method="POST" class="col s12" novalidate>
+    {{ form.hidden_tag() }}
+    <div class="container">
+        <div class="row input-field">
+            <i class="material-icons prefix">fingerprint</i>
+            {{ form.client_id.label() }}
+            {{ form.client_id(class_='white-font') }}
+        </div>
+        <div class="row input-field">
+            <i class="material-icons prefix">settings</i>
+            {{ form.response_type.label() }}
+            {{ form.response_type(class_='white-font') }}
+        </div>
+        <div class="row input-field">
+            <i class="material-icons prefix">link</i>
+            {{ form.redirect_uri.label() }}
+            {{ form.redirect_uri(class_='white-font') }}
+        </div>
+        <div class="row input-field">
+            <i class="material-icons prefix">lock</i>
+            {{ form.scope.label(class_='active') }}
+            {{ form.scope() }}
+        </div>
+        <div class="row center-align">
+            {# Check for any flashed messages #}
+            {% with messages = get_flashed_messages() %}
+
+            {% if messages %}
+            <ul>
+                {% for message in messages %}
+                <li>
+                    <span class=""><b>{{ message }}</b></span>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+        </div>
+        <div class="row center-align input-field">
+            {{ form.form_submit(class_='btn waves-light green accent-4') }}
+        </div>
+
+    </div>
+</form>
+</div>  
+{% endblock %}
+{% block scripts %}
+<script>
+  // Initilize select field
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems);
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <h3 class="center-align">Token Information</h3>
+</div>
+
+<table class="">
+    <tbody>
+        <tr>
+            <th>Access Token</th>
+            <td id="access_token"></td>
+        </tr>
+        <tr>
+            <th>Token Type</th>
+            <td id="token_type"></td>
+        </tr>
+        <tr>
+            <th>Expire Time (Seconds)</th>
+            <td id="expires_in"></td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // This script parses the returned URL from the Spotify API and formats it into an HTML table
+
+    let base_callback_url = 'http://localhost:5000/auth/callback/#';
+    let response_url = window.location.href;
+
+    // strip out base URL provided for the callback
+    response_url = response_url.replace(base_callback_url, '');
+
+    // break URL into array using parameter separator (&)
+    const response_url_arr = response_url.split('&');
+
+    // initialize empty token object... we will generate the properties
+    const token_obj = {}
+
+    // break the parameters into key-value pairs and assign them as properties in our token_obj
+    for (let i = 0; i < response_url_arr.length; i++) {
+        let keyval_pair = response_url_arr[i].split('=');
+        token_obj[keyval_pair[0]] = keyval_pair[1];
+    }
+
+    // populate our HTML table with the information from our token_obj
+    for (prop in token_obj) {
+        let elem = document.querySelector(`#${prop}`);
+        elem.innerHTML = token_obj[prop];
+    }
+</script>
+{% endblock %}
