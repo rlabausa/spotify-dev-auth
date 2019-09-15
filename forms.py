@@ -7,7 +7,7 @@ class AuthorizationTokenForm(FlaskForm):
     client_id = StringField(validators=[DataRequired()])
     response_type = StringField(validators=[DataRequired()])
     redirect_uri = StringField(validators=[DataRequired()])
-    scope = SelectMultipleField(validators=[DataRequired()],
+    scope = SelectMultipleField(
         choices=(
             (
                 ('Spotify Connect', (
