@@ -24,7 +24,7 @@ To get the app running:
         - To do this, visit: https://developer.spotify.com/dashboard/applications. Select your app. Go to **EDIT SETTINGS > Redirect URIs**, add in the URL and click **SAVE**.
 3. (**Optional**) You can remove or configure the default scope by adding to or removing from the `scope` variable in the `auth` view function.
     - You can read about the various authorization scopes on: https://developer.spotify.com/documentation/general/guides/scopes/.
-4. Once everything is configured to your liking, run the command:
+4. Once everything is configured to your liking, run the application using:
     ```
     flask run
     ```
