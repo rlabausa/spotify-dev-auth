@@ -6,7 +6,7 @@ To get the app running:
     ```
     pip3 install -r requirements.txt
     ```
-2. Configure your **.env** file with the following variables:
+2. Configure your **.env** file with the following variables (a **.env.example** file can be found in the root of the repo):
     - `SECRET_KEY`: This is required to use FlaskForms and can be generated with Python 3's `os` or `secrets` module.
         - In a Python shell, simply copy the output of either of the following commands into your **.env** file:
             ```Python
