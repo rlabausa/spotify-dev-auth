@@ -1,6 +1,7 @@
 # spotify-dev-auth
 This Flask app helps streamline the tedious process of generating a Spotify access token through the **[Implicit Grant Flow](https://developer.spotify.com/documentation/general/guides/authorization-guide/#implicit-grant-flow)**. 
 
+## Running Locally
 To get the app running:
 1. Install the required dependencies:
     ```
